@@ -12,7 +12,6 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
-
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Map<String, String>> handleNotFound(NotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("erro", ex.getMessage()));
